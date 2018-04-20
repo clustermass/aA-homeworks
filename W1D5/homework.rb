@@ -12,7 +12,7 @@ class Stack
     end
 
     def show
-      self
+      @stack.dup
     end
   end
 
@@ -46,7 +46,7 @@ class Queue
   end
 
   def show
-    self
+    @queue.dup
   end
 end
 
@@ -88,7 +88,11 @@ class Map
   end
 
   def show
-    self
+    deep_dup(@map)
+  end
+
+  def deep_dup(arr)
+   arr.map { |kv_pair| kv_pair.is_a?(Array) ? deep_dup(kv_pair) : kv_pair }
   end
 end
 
