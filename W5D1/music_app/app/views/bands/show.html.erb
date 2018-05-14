@@ -1,0 +1,8 @@
+<h2>Band info:<h2>
+Name: <%=@band.name %><br>
+Added to our base: <%=@band.created_at %>
+<form  action="<%=band_url(@band.id)%>" method="post">
+  <input="hidden" name="_method" value="delete">
+  <input type="sumbit" value="Delete">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>

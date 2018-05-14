@@ -1,0 +1,11 @@
+
+<% if logged_in? %>
+<h2>Please, create new band<h2>
+  <form class="" action="<%=bands_url%>" method="post">
+    Band name:
+    <input type="text" name="band[name]" id="band_name">
+
+    <input type="submit" name="Add band">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  </form>
+<% end %>
